@@ -17,7 +17,6 @@ public class Kommunikation {
         try {
             return queue.take();
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
             return null;
         }
     }

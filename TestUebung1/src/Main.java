@@ -1,6 +1,6 @@
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         TestObjekt testObjekt = new TestObjekt();
         Kommunikation kommunikation = new Kommunikation();
@@ -10,10 +10,10 @@ public class Main {
         Thread runnerThread = new Thread(runner);
         runnerThread.start();
 
-        int erg1 = zugriff.add(5);
+        int erg1 = zugriff.add(3);
         System.out.println("Ergebnis 1: " + erg1);
 
-        int erg2 = zugriff.add(3);
+        int erg2 = zugriff.add(67);
         System.out.println("Ergebnis 2: " + erg2);
 
         runner.shutdown();
