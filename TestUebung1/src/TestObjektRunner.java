@@ -2,7 +2,7 @@ public class TestObjektRunner implements Runnable {
 
     private final TestObjekt testObjekt;
     private final Kommunikation kommunikation;
-    private  boolean running = true;
+    private volatile boolean running = true;
 
     public TestObjektRunner(TestObjekt testObjekt, Kommunikation kommunikation) {
         this.testObjekt = testObjekt;
@@ -11,7 +11,7 @@ public class TestObjektRunner implements Runnable {
 
     public void shutdown() {
         running = false;
-        kommunikation.addAnfrage(new Anfrage(0));
+        kommunikation.addAnfrage(new Anfrage(0)); // Entweder das oder in der main
     }
 
     @Override

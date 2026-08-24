@@ -17,6 +17,8 @@ public class Main {
         System.out.println("Ergebnis 2: " + erg2);
 
         runner.shutdown();
+        runnerThread.interrupt(); // Beendet
+
 
         try {
             runnerThread.join();
